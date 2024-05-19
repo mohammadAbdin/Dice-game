@@ -37,8 +37,24 @@ const palying_screen = () => {
       div.style.display = "none";
     });
     newGameMenu.style.display = "flex";
+
     START_newgame.addEventListener("click", function () {
       target = document.getElementById("new_target");
+      first_player.classList.add("first_player");
+      second_player.classList.add("second_player");
+      sum = 0;
+      score1.innerHTML = 0;
+      score2.innerHTML = 0;
+
+      console.log(result1.children);
+      Array.from(result1.children).map((div) => {
+        div.style.display = "none";
+      });
+      Array.from(result2.children).map((div) => {
+        div.style.display = "none";
+      });
+
+      console.log("amjad");
       newGameMenu.style.display = "none";
       control.style.display = "flex";
       second_player_div.forEach((div) => {
@@ -47,6 +63,7 @@ const palying_screen = () => {
       first_player_div.forEach((div) => {
         div.style.display = "block";
       });
+
       palying_screen();
     });
   });
